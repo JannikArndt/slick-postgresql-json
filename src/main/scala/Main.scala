@@ -2,7 +2,7 @@ import java.sql.Timestamp
 import java.time.Instant
 
 import shapeless.{Generic, HNil}
-import slick.jdbc.PostgresProfile.api._
+import MyPostgresProfile.api._
 import slick.lifted.ProvenShape
 import slickless._
 
