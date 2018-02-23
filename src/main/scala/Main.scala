@@ -38,6 +38,12 @@ object Main extends App {
 
   Await.result(db.run(action), 2 seconds)
 
+  // SELECT json -> 'location' -> 'lat' FROM slick_pg_test.jsontable;
+  val query1 = table.map(_.json +> "location" +> "lat").result
+
+  val location = Await.result(db.run(query1), 2 seconds)
+  println(s"location= $location")
+
   db.close()
 }
 
